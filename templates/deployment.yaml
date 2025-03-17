@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frst-angular-app
+  labels:
+    app: frst-angular-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frst-angular-app
+  template:
+    metadata:
+      labels:
+        app: frst-angular-app
+    spec:
+      containers:
+      - name: angular-app
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        ports:
+        - containerPort: 80

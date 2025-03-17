@@ -1,0 +1,7 @@
+
+replicaCount: 1
+
+image:
+  repository: "frstdemoacr.azurecr.io/frst-demo"
+  pullPolicy: "Always"
+  tag: "latest"
